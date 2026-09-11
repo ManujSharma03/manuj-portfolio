@@ -1,4 +1,4 @@
-# Mac-style Portfolio
+# Manuj Portfolio
 
 A macOS-desktop-style personal portfolio: menu bar, dock, draggable windows,
 Finder-style navigation, Spotlight-style search, and an AI assistant that
