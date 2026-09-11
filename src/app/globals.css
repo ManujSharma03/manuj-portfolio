@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0d;
+  --foreground: #ededed;
+
+  /* Dark theme (default) — shared surface tokens used throughout the
+     desktop shell and every window's content, so switching themes updates
+     the whole app instead of just isolated pieces. */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --surface-panel: rgba(28, 28, 30, 0.95);
+  --surface-card: rgba(255, 255, 255, 0.04);
+  --surface-card-hover: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --topbar-bg: rgba(13, 13, 16, 0.8);
+  --dock-bg: rgba(255, 255, 255, 0.1);
+  --app-bg: #0a0a10;
+}
+
+html.light {
+  /* Light theme overrides — same tokens, flipped. */
+  --text-primary: #15171c;
+  --text-secondary: rgba(21, 23, 28, 0.72);
+  --text-muted: rgba(21, 23, 28, 0.5);
+  --surface-panel: rgba(255, 255, 255, 0.97);
+  --surface-card: rgba(21, 23, 28, 0.045);
+  --surface-card-hover: rgba(21, 23, 28, 0.08);
+  --border-subtle: rgba(21, 23, 28, 0.12);
+  --topbar-bg: rgba(255, 255, 255, 0.75);
+  --dock-bg: rgba(21, 23, 28, 0.08);
+  --app-bg: #eef0f4;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Semantic theme-aware utility classes. Using named classes (instead of
+   scattering CSS-variable arbitrary values through every component) keeps
+   the theme system in one place and easy to extend. */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+
+.surface-card {
+  background-color: var(--surface-card);
+  border-color: var(--border-subtle);
+}
+.surface-card-hover:hover {
+  background-color: var(--surface-card-hover);
+}
+.surface-panel {
+  background-color: var(--surface-panel);
+  border-color: var(--border-subtle);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
