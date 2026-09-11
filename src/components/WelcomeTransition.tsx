@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { profile } from '@/data/portfolio'
+
 
 interface WelcomeTransitionProps {
   onFinish: () => void
